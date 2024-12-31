@@ -9,7 +9,7 @@ const useEventsStore = create((set) => ({
   fetchEvents: async () => {
     set({ loading: true });
     try {
-      const response = await axios.get('http://localhost:3000/api/events');
+      const response = await axios.get('https://ten-virtual-aggregator.onrender.com/api/events');
       const formattedEvents = response.data
         .map(event => ({
           ...event,
@@ -29,7 +29,7 @@ const useEventsStore = create((set) => ({
   addEvent: async (eventData) => {
     set({ loading: true });
     try {
-      const response = await axios.post('http://localhost:3000/api/events', eventData);
+      const response = await axios.post('https://ten-virtual-aggregator.onrender.com/api/events', eventData);
       set(state => {
         const updatedEvents = [...state.events, {
           ...response.data,
@@ -49,7 +49,7 @@ const useEventsStore = create((set) => ({
   updateEvent: async (id, eventData) => {
     set({ loading: true });
     try {
-      const response = await axios.put(`http://localhost:3000/api/events/${id}`, eventData);
+      const response = await axios.put(`https://ten-virtual-aggregator.onrender.com/api/events/${id}`, eventData);
       set(state => {
         const updatedEvents = state.events
           .map(event => 
@@ -73,7 +73,7 @@ const useEventsStore = create((set) => ({
   deleteEvent: async (id) => {
     set({ loading: true });
     try {
-      await axios.delete(`http://localhost:3000/api/events/${id}`);
+      await axios.delete(`https://ten-virtual-aggregator.onrender.com/api/events/${id}`);
       set(state => ({
         events: state.events.filter(event => event._id !== id),
         loading: false

@@ -92,7 +92,7 @@ const ContactUs = () => {
   };
 
   const { fetchData, loading, error } = useFetch(
-    "http://localhost:3000/api/contact",
+    "https://ten-virtual-aggregator.onrender.com//api/contact",
     "POST"
   );
 

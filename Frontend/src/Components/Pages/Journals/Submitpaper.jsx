@@ -86,7 +86,7 @@ const App = () => {
     });
 
     try {
-      const response = await axios.post("http://localhost:3000/submit", data, {
+      const response = await axios.post("https://ten-virtual-aggregator.onrender.com/submit", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
