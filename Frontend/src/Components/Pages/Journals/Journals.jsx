@@ -11,7 +11,7 @@ function Journals() {
 
   useEffect(() => {
     fetchData();
-  }, [data]);
+  }, []);
 
   return (
     <div style={{ height: "100%" }}>
