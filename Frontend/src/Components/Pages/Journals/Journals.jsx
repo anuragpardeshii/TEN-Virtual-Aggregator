@@ -5,7 +5,7 @@ import useFetch from "../../../customAPI/useFetch";
 
 function Journals() {
   const { fetchData, data, error } = useFetch(
-    "https://ten-virtual-aggregator.onrender.com/alljournals",
+    "https://ten-virtual-aggregator.onrender.com/api/alljournals",
     "GET"
   );
 
