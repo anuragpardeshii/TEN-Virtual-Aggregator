@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+}
+
+.footer {
+  background-color: #161515;
+  color: #ffffff;
+  padding: 3rem 4rem;
+  font-family: Arial, sans-serif;
+  position: absolute;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://academicworldresearch.org/images/map.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 400px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.footer-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around; /* Even spacing between columns */
+  z-index: 2;
+  flex-direction: column;
+}
+
+.footer-section,
+.footer-section2 {
+  margin: 0;
+  text-align: left; /* Default left alignment */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.footer-section h3,
+.footer-section2 h3 {
+  color: #80011f;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-section a,
+.footer-section2 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-section li:hover,
+.footer-section2 li:hover {
+  color: #80011f;
+}
+
+.footer-section p {
+  text-align: start;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-section ul,
+.footer-section2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li,
+.footer-section2 li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center; 
+  z-index: 100;
+}
+
+.mxw {
+  max-width: 26rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-wrap: wrap; /* Adjust layout for responsiveness */
+    justify-content: space-around; /* Maintain spacing */
+  }
+
+  .mxw {
+    max-width: 12rem;
+  }
+
+  .footer-mb {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    justify-content: center; /* Center the sections horizontally */
+  }
+
+  .mxw {
+    max-width: 100%;
+  }
+
+  .footer-section,
+  .footer-section2 {
+    width: 100%; /* Full-width for smaller screens */
+    text-align: center; /* Center text */
+  }
+
+  .footer-section h3,
+  .footer-section2 h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section2 li {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    padding: 10px 15px;
+  }
+
+  .footer-content {
+    flex-wrap: wrap; /* Ensure sections stack vertically */
+    justify-content: center; /* Center sections */
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .footer-section,
+  .footer-section2 {
+    width: 100%; /* Full-width for smallest screens */
+    text-align: center;
+  }
+
+  .footer-section h3,
+  .footer-section2 h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section2 li {
+    font-size: 1rem; /* Smaller font for readability */
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
