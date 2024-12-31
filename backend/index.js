@@ -1,14 +1,14 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import dotenv from "dotenv";
-import { connectToDb } from "./config/db.js";
-import submissionRoutes from "./routes/submission.js";
-import journalRoute from "./routes/journalRoute.js";
-import contactRoute from "./routes/contactRoute.js";
-import eventRoute from "./routes/addEventRoute.js";
-import sciEventsRoute from "./routes/sciEventsRoute.js";
-import adminRoute from "./routes/adminRoute.js"
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const { connectToDb } = require("./config/db.js");  // Adjusted for CommonJS
+const submissionRoutes = require("./routes/submission.js");
+const journalRoute = require("./routes/journalRoute.js");
+const contactRoute = require("./routes/contactRoute.js");
+const eventRoute = require("./routes/addEventRoute.js");
+const sciEventsRoute = require("./routes/sciEventsRoute.js");
+const adminRoute = require("./routes/adminRoute.js");
 
 dotenv.config();
 const app = express();
@@ -22,8 +22,6 @@ app.use("/uploads", express.static("uploads"));
 connectToDb(process.env.MONGO_URI);
 
 app.use("/submit", submissionRoutes);
-// app.use("/api/submissions", submissionRoutes);
-
 app.use("/api", contactRoute);
 app.use("/api", journalRoute);
 app.use("/api", eventRoute);
